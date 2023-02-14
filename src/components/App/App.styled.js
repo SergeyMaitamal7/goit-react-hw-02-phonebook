@@ -10,4 +10,5 @@ export const Container = styled.div`
   padding: 10px;
   border-radius: 1px;
   border: 1px solid aqua;
+  background-color: lightgray;
 `;

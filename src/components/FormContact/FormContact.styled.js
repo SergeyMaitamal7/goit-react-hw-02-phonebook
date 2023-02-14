@@ -18,6 +18,7 @@ export const Button = styled.button`
   font-size: 16px;
   border-radius: 4px;
   cursor: pointer;
+  background-color: lightblue;
 `;
 export const Input = styled.input`
   display: block;
