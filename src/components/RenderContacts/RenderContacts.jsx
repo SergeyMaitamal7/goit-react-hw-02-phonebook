@@ -1,24 +1,28 @@
 import PropTypes from 'prop-types';
-import { Contact } from './RenderContacts.styled';
-export const RenderContacts= ({ contacts}) => {
-  console.log(contacts)
+import { Contact, Button } from './RenderContacts.styled';
+
+export const RenderContacts = ({ contacts, onDelete }) => {
+  // console.log(contacts);
   return (
     <>
-        {contacts.map(contact=> (
-          <Contact
-            key={contact.id}
-            type="button"
-            name={contact.name}
-            // onClick={() => onLeaveFeedback(contact)}
-          >
-            {contact.name} : {contact.number}
-          </Contact>
-        ))}
+      {contacts.map(contact => (
+        <Contact key={contact.id} type="button" name={contact.name}>
+          {contact.name} : {contact.number}
+          <Button onClick={() => onDelete(contact.id)}>Delete</Button>
+        </Contact>
+      ))}
     </>
   );
 };
 
-// FeedbackOptions.propTypes = {
-//   options: PropTypes.array.isRequired,
-//   onLeaveFeedback: PropTypes.func.isRequired,
-// };
+RenderContacts.propTypes = {
+  contacts: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      name: PropTypes.string,
+      number: PropTypes.string,
+    })
+  ),
+  onDelete: PropTypes.func,
+};
+

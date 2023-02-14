@@ -13,6 +13,8 @@ export const Filter = ({ onChange}) => {
   );
 };
 
-//   Section.propTypes = {
-//     onChange: PropTypes.string.isRequired,
-//   };
+
+Filter.propTypes = {
+  onChange: PropTypes.func.isRequired,
+};
+
