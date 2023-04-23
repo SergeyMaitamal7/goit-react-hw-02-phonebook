@@ -74,7 +74,7 @@ export const ContactForm = ({ onSubmit }) => {
               <ErrorMessage>{errors.number}</ErrorMessage>
             )}
           </Box>
-          <Button type="submit" disabled={!isValid && !dirty}>
+          <Button type="submit" disabled={!isValid || !dirty}>
             Submit
           </Button>
         </SubmitForm>
