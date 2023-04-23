@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
-import { Contact, Button } from './RenderContacts.styled';
-
+import { Contact, ButtonDelete } from './RenderContacts.styled';
+import { Button } from 'components/FormContact/FormContact.styled';
 export const RenderContacts = ({ contacts, onDelete }) => {
   // console.log(contacts);
   return (
@@ -8,7 +8,9 @@ export const RenderContacts = ({ contacts, onDelete }) => {
       {contacts.map(contact => (
         <Contact key={contact.id} type="button" name={contact.name}>
           {contact.name} : {contact.number}
-          <Button onClick={() => onDelete(contact.id)}>Delete</Button>
+          <ButtonDelete onClick={() => onDelete(contact.id)}>
+            Delete
+          </ButtonDelete>
         </Contact>
       ))}
     </>
@@ -25,4 +27,3 @@ RenderContacts.propTypes = {
   ),
   onDelete: PropTypes.func,
 };
-

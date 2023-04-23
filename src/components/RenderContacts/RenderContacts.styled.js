@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Button } from 'components/FormContact/FormContact.styled';
 export const Contact = styled.p`
   display: flex;
   justify-content: space-between;
@@ -6,14 +7,8 @@ export const Contact = styled.p`
   padding: 10px;
   font-size: 18px;
 `;
-export const Button = styled.button`
-  display: inline-block;
+
+export const ButtonDelete = styled(Button)`
   margin-left: auto;
-  padding: 10px;
-  padding-left: 20px;
-  padding-right: 20px;
-  font-size: 16px;
-  border-radius: 4px;
-  cursor: pointer;
-  background-color: lightblue;
+  margin-right: 0;
 `;
